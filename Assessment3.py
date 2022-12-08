@@ -46,6 +46,16 @@ veh = Bicycle(
 
 background = import matplotlib('map.png', scale=5) #loading the given map with the exact size
 
+def detect_obstacles(readings): #used to read if ther is any obstacle in a certain range
+    for i in readings:
+        if (i[0] < 4 and abs(i[1]) < pi/3):
+            return False
+        else:
+            veh.step(0.5,0)
+            veh._animation.update(veh.x)
+            plt.pause(0.02)
+run= True
+
 run= True #the code that is used to stop the vehicle when it reads an obstacle
 while (run):
     for i in sensor.h(veh.x):
@@ -58,15 +68,6 @@ while (run):
             plt.pause(0.02)
 plt.pause(10)
 
-def detect_obstacles(readings): #used to read if ther is any obstacle in a certain range
-    for i in readings:
-        if (i[0] < 4 and abs(i[1]) < pi/3):
-            return False
-        else:
-            veh.step(0.5,0)
-            veh._animation.update(veh.x)
-            plt.pause(0.02)
-run= True
 
 while (run): #a function used to detect if there an obstacle so it can stop within a certain range
     if(detect_obstacles(sensor.h(veh.x)) is False):
