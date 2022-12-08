@@ -42,10 +42,7 @@ veh = Bicycle(
     y0=(0,0,1.5), #inital position
 )
 
-veh.init(plot=True)
-map = LandmarkMap( 15, 15)
-map.plot()
-sensor=RangeBearingSensor(robot=veh,map=map,animate=True) #used to add the rangebearing sensors
+
 
 background = import matplotlib('map.png', scale=5) #loading the given map with the exact size
 
