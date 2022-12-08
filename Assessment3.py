@@ -82,10 +82,9 @@ plt_pause=(10)
 
 if:   #conditions to make sure the user choose a coordinate that is in the map 
     goalx > 1
+    print('this coordinate cannot be used, please enter a number higher than one')
     goaly < 1
-else:
-    veh._animation.update(veh.x,veh.y)
-    plt_pause=(10)
+    print('this coordinate cannot be used, please enter a number higher than one')
 
 if: #condition used to make sure the vehicle will not hit an obstacle
     input != for goalx list(2,3,5)
