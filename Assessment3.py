@@ -81,7 +81,7 @@ plt.imshow(image, extent = [-5,5,-10,10])
 plt_pause=(10)
 
 if:   #conditions to make sure the user choose a coordinate that is in the map 
-    goalx > 1
+    goalx < 1
     print('this coordinate cannot be used, please enter a number higher than one')
     goaly < 1
     print('this coordinate cannot be used, please enter a number higher than one')
